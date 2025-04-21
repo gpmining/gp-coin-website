@@ -1,0 +1,193 @@
+/* General Layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Logout Button */
+#logout-btn {
+    background: red;
+    color: white;
+    border: none;
+    margin-right: 30px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #222;
+    color: white;
+    padding: 20px;
+    padding-top: 45px;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #555;
+}
+
+/* Sidebar Toggle Button */
+#sidebar-toggle {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    margin-left: 20px;
+    padding: 80px 20px 20px;
+    flex-grow: 1;
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Headings */
+main h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Buttons */
+button {
+    padding: 6px 10px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Status Badges */
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+
+    #sidebar-toggle {
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    #logout-btn {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

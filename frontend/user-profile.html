@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - GP Coin</title>
+  <link rel="stylesheet" href="styles/user-profile.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="free"> <!-- This class will be updated dynamically -->
+
+  <header>
+    <h1>My Profile</h1>
+  </header>
+
+  <main class="profile-container">
+    <div class="rank-section">
+      <img id="rank-logo" src="assets/icons/free-logo.png" alt="Rank Logo">
+      <h2 id="user-rank">Free</h2>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Name:</strong> <span id="user-name">Loading...</span></p>
+      <p><strong>Email:</strong> <span id="user-email">Loading...</span></p>
+      <p><strong>GP ID:</strong> <span id="user-id">Loading...</span></p>
+      <p><strong>CNIC:</strong> <span id="user-cnic">Loading...</span></p>
+      <p><strong>Mobile:</strong> <span id="user-mobile">Loading...</span></p>
+      <p><strong>Date of Birth:</strong> <span id="user-dob">Loading...</span></p>
+    </div>
+
+    <div class="button-group">
+      <button onclick="changePassword()">Change Password</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 GP Coin. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/user-profile.js"></script>
+</body>
+</html>

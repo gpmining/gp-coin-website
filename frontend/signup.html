@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GP Coin - Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/signup.css">
+  <!-- reCAPTCHA API -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- Hamburger Menu Icon -->
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <!-- Centered Logo -->
+      <div class="logo">
+        <img src="assets/images/gp-coin.png" alt="GP Coin Logo">
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main>
+    <section class="signup-section">
+        <div class="signup-card">
+            <h2>Create Your Account</h2>
+            <form id="signup-form">
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@abc.com" required>
+                </div>
+        <!-- CNIC -->
+        <div class="form-group">
+          <label for="cnic">CNIC:</label>
+          <input type="text" id="cnic" name="cnic" placeholder="XXXXX-XXXXXXX-X" maxlength="15" required>
+        </div>
+
+        <!-- Mobile No -->
+        <div class="form-group">
+          <label for="mobile">Mobile No:</label>
+          <input type="text" id="mobile" name="mobile" placeholder="03XX-XXXXXXX" maxlength="12" required>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+                <!-- Friend's GP ID (Referral System) -->
+                <div class="form-group">
+                    <label for="referral-gp-id">Friend's GP ID (Optional):</label>
+                    <input type="text" id="referral-gp-id" name="referral-gp-id" placeholder="Enter referrer's GP ID">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group password-group">
+                    <label for="password">Password:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <img src="assets/icons/hide.png" class="toggle-password" id="toggle-password" onclick="togglePassword('password')" alt="Toggle Password">
+                    </div>
+                </div>
+
+                <div class="form-group password-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <img src="assets/icons/hide.png" class="toggle-password" id="toggle-confirm-password" onclick="togglePassword('confirm-password')" alt="Toggle Password">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn signup-btn">Register</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Log In here</a>.</p>
+        </div>
+    </section>
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 GP Coin. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/signup.js"></script>
+</body>
+</html>

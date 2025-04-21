@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GP Coin - Subscription</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/subscription.css"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div><div class="line"></div><div class="line"></div>
+      </div>
+      <div class="logo">
+        <img src="assets/images/gp-coin.png" alt="GP Coin Logo">
+      </div>
+      <div class="user-icon" onclick="window.location.href='user-profile.html'">
+        <img src="assets/icons/user.png" alt="User Profile">
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="subscription.html" class="active">Subscription</a></li>
+        <li><a href="withdraw.html">Withdraw</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 🔄 Loading Overlay -->
+<div id="loader" class="loader-overlay" style="display: none;">
+  <div class="spinner"></div>
+</div>
+    <section class="subscription-section">
+      <h2>Upgrade Your Rank</h2>
+
+      <!-- Rank Options -->
+      <div class="rank-cards">
+        <div class="rank-card" data-rank="silver" data-price="20">
+          <img src="assets/images/silver.png" alt="Silver"/>
+        </div>
+        <div class="rank-card" data-rank="gold" data-price="50">
+          <img src="assets/images/gold.png" alt="Gold"/>
+        </div>
+        <div class="rank-card" data-rank="diamond" data-price="80">
+          <img src="assets/images/diamond.png" alt="Diamond"/>
+        </div>
+        <div class="rank-card" data-rank="ultimate" data-price="120">
+          <img src="assets/images/ultimate.png" alt="Ultimate"/>
+        </div>
+      </div>
+
+      <!-- Selected Rank Info -->
+      <div id="price-section">
+        <p><strong>Selected Rank:</strong> <span id="selected-rank">None</span></p>
+        <p><strong>Price:</strong>    <span id="selected-price">0</span></p>
+      </div>
+
+      <!-- Payment Instructions -->
+      <div class="payment-details">
+        <h3>Send USDT (BEP20 / BNB Smart Chain)</h3>
+        <div class="address-box">
+          <p id="wallet-address">0x89205A3A3b2A69De6dbf7f01ED13B2108B2c43e7</p>
+          <button id="copy-address"><img src="assets/icons/copy.png" alt="Copy"/></button>
+        </div>
+
+        <input type="text" id="txn-id" placeholder="Enter Transaction ID (TxHash)"/>
+        <button class="btn subscribe-btn" id="subscribe-btn">Submit Request</button>
+        <p class="form-msg" id="form-msg"></p>
+      </div>
+
+      <!-- How to Buy Guide -->
+      <div class="video-guide">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/subscription.js"></script>
+</body>
+</html>

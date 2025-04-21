@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GP Coin - Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body class="free">
+
+  <header>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="logo">
+        <img src="assets/images/gp-coin.png" alt="GP Coin Logo" />
+      </div>
+
+      <div class="user-icon" id="user-icon">
+        <img src="assets/icons/user.png" alt="User Profile" />
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="tasks.html">Tasks</a></li>
+        <li><a href="subscription.html">Subscription</a></li>
+        <li><a href="user-profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-section">
+      <!-- Balance Display -->
+      <div class="balance-card">
+        <div class="balance-item">
+          <span>GP Balance:</span>
+          <h2 id="gp-balance">0.00 GP</h2>
+        </div>
+        <div class="balance-item">
+          <span>Exchange Rate:</span>
+          <h2 id="exchange-rate">$0.00</h2>
+        </div>
+        <div class="balance-item">
+          <span>Current Speed:</span>
+          <h2 id="gp-speed">0 GP/h</h2>
+        </div>
+      </div>
+
+      <!-- Mining Area -->
+      <div class="mining-section">
+        <div class="mining-btn-container">
+          <button id="start-mining" class="mining-btn">START</button>
+        </div>
+        <p class="mining-status" id="mining-status">Ready to Mine</p>
+      </div>
+      <div class="urdu-message">
+        <p>نوٹ: بیلنس اور ایکسچینج ریٹ مائننگ کا وقت ختم ہونے کے بعد اپ ڈیٹ ہو جائے گا۔</p>
+      </div>
+      
+      <!-- Dashboard Navigation -->
+      <div class="navigation-grid">
+        <a href="subscription.html" class="nav-card">
+          <h3>Subscription</h3>
+          <p>Upgrade your plan</p>
+        </a>
+        <a href="tasks.html" class="nav-card">
+          <h3>Tasks</h3>
+          <p>Earn more GP</p>
+        </a>
+        <a href="withdraw.html" class="nav-card">
+          <h3>Withdraw</h3>
+          <p>Cash out earnings</p>
+        </a>
+        <a href="refer-friends.html" class="nav-card">
+          <h3>Refer Friends</h3>
+          <p>Get bonuses</p>
+        </a>
+        <a href="transaction-history.html" class="nav-card">
+          <h3>History</h3>
+          <p>View transactions</p>
+        </a>
+        <a href="mailto:gpmining@proton.me" class="nav-card">
+          <h3>Contact Us</h3>
+          <p>Reach out via email:
+            gpmining@proton.me
+          </p>        
+        </a>
+      </div>
+
+      <!-- 🔒 Change Password Modal -->
+<div id="password-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <span class="close-icon" id="close-password-modal">&times;</span>
+    <h3>Change Password</h3>
+    <form id="password-form">
+      <label>Current Password:</label>
+      <input type="password" id="current-password" required>
+
+      <label>New Password:</label>
+      <input type="password" id="new-password" required>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn">Change</button>
+        <button type="button" class="btn cancel-btn" onclick="closePasswordModal()">Cancel</button>
+      </div>
+    </form>
+    <p id="password-msg" class="status-msg"></p>
+  </div>
+</div>
+
+     <!-- User Profile Dropdown -->
+     <div class="user-dropdown" id="user-dropdown">
+      <p><strong>Name:</strong> <span id="user-name">Loading...</span></p>
+      <p><strong>User ID:</strong> <span id="user-id">Loading...</span></p>      
+      <button onclick="changePassword()">Change Password</button>
+      <button onclick="logout()">Logout</button>
+    </div>    
+    </section>
+  </main>
+
+  <!-- Rank Upgrade Popup -->
+  <div id="miningPopup" class="popup">
+    <div class="popup-content">
+      <h2>Upgrade Required</h2>
+      <p>You need to upgrade your rank to start mining.</p>
+      <button id="upgradeBtn">Upgrade</button>
+      <button id="closePopup">Cancel</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 GP Coin. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>

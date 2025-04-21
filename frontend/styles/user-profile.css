@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  /* Rank Backgrounds */
+  body.free {
+    background: linear-gradient(-45deg, #797F93, #6E7586, #A2A9BD, #2F323F);
+  }
+  body.silver {
+    background: linear-gradient(-45deg, #A8C7EC, #475461, #7AA1C7, #608AB3);
+  }
+  body.gold {
+    background: linear-gradient(-45deg, #E6B656, #E8B74D, #A96031, #DFAA46);
+  }
+  body.diamond {
+    background: linear-gradient(-45deg, #54E3F5, #777BE5, #D4C5FE, #EBDDFE);
+  }
+  body.ultimate {
+    background: linear-gradient(-45deg, #DD1AE5, #9D7AF7, #BD7DFC, #7531CF);
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Header */
+  header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  /* Profile Section */
+  .profile-container {
+    padding: 2rem 1rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .rank-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rank-section img {
+    width: 80px;
+    height: auto;
+  }
+  .rank-section h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+  
+  /* Info Box */
+  .info-box {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  .info-box p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  .info-box strong {
+    color: #ffeb3b;
+  }
+  
+  /* Buttons */
+  .button-group {
+    margin-top: 2rem;
+  }
+  .button-group button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .button-group button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  

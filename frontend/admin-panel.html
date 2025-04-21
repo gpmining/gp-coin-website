@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="styles/admin-panel.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <button id="sidebar-toggle">☰</button>
+    <h1>Admin Panel</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#" id="users-link">Users</a></li>
+      <li><a href="#" id="subscription-requests-link">Subscription Requests</a></li>
+      <li><a href="#" id="withdraw-requests-link">Withdraw Requests</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- All Users Section -->
+    <section id="users-section">
+      <h2>All Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>GP ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>CNIC</th>
+            <th>Rank</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="user-table-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Subscription Requests -->
+    <section id="subscription-requests-section" style="display: none;">
+      <h2>Subscription Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>GP ID</th>
+            <th>Name</th>
+            <th>Rank</th>
+            <th>Amount</th>
+            <th>Txn ID</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="subscription-requests-table-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Withdraw Requests -->
+    <section id="withdraw-requests-section" style="display: none;">
+      <h2>Withdraw Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>GP ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Amount</th>
+            <th>Binance ID</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="withdraw-requests-table-body"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="scripts/admin-panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction History - GP Coin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/transaction-history.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="assets/images/gp-coin.png" alt="GP Coin Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="withdraw.html">Withdraw</a></li>
+        <li><a href="subscription.html">Subscription</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Transaction History</h1>
+
+    <!-- Subscription History -->
+    <section class="history-section">
+      <h2>Subscription Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Amount</th>
+            <th>Txn ID</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="subscription-history-body"></tbody>
+      </table>
+    </section>
+
+    <!-- Withdrawal History -->
+    <section class="history-section">
+      <h2>Withdraw Requests</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Amount</th>
+            <th>Binance ID</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="withdrawal-history-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="scripts/transaction-history.js"></script>
+</body>
+</html>

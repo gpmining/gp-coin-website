@@ -1,0 +1,300 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: 300%;
+  background: linear-gradient(-45deg, #A8C7EC, #475461, #7AA1C7, #608AB3);
+  background-size: 300% 300%;
+  animation: gradientBlur 5s ease infinite;
+  
+  backdrop-filter: blur(15px); /* Adds blur effect */
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  position: relative;
+}
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ddd;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Centered Logo */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  height: 60px; /* Adjust logo size as needed */
+}
+/* User Icon (Profile Picture) */
+.user-icon {
+  position: absolute;
+  right: 15px; /* Moves it to the right corner */
+}
+
+.user-icon img {
+  width: 40px;  /* Adjust icon size */
+  height: 40px; /* Keep it proportional */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure proper image fit */
+  border: 1px solid white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger into "X" when active */
+.hamburger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show hamburger menu on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide navigation links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show navigation links when active */
+  }
+}
+/* Subscription Section */
+.subscription-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 2rem;
+}
+
+.rank-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.rank-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  aspect-ratio: 4/1;
+}
+.price-section {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.rank-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.rank-card.selected {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.payment-details {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.wallet-address h3 {
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.address-box {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+#wallet-address {
+  flex: 1;
+  word-break: break-all;
+  margin-right: 1rem;
+}
+
+#copy-address {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+#copy-address img {
+  width: 24px;
+  height: 24px;
+}
+
+.transaction-id input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #007bff;
+  background: transparent;
+  color: white;
+  margin: 1rem 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn {
+  background: #007bff;
+  color: white;
+}
+
+.guide-btn {
+  background: #28a745;
+  color: white;
+}
+
+.video-guide {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.video-guide iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .rank-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .video-guide iframe {
+    height: 250px;
+  }
+}

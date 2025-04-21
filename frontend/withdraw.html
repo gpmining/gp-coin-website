@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GP Coin - Withdraw</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/withdraw.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="logo">
+        <img src="assets/images/gp-coin.png" alt="GP Coin Logo">
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="transaction-history.html">History</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="withdraw-section">
+      <h2>Withdraw Funds</h2>
+      
+      <form id="withdraw-form">
+        <div class="form-group">
+          <label>Amount (USD)</label>
+          <input type="number" id="amount" min="3" max="100" step="0.01" 
+                 placeholder="Enter amount (3-100 USD)" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Binance ID</label>
+          <input type="text" id="binance-id" 
+                 placeholder="Enter your Binance ID" required>
+        </div>
+        <p id="gp-preview">💰 GP Preview: You will be charged 0 GP for $0.00</p>
+        
+        <button type="submit" class="btn withdraw-btn">Withdraw Now</button>
+      </form>
+      
+      <div class="fee-notice">
+        <p>Processing fee: 2% (Minimum $1)</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/withdraw.js"></script>
+</body>
+</html>

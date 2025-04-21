@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer Friends</title>
+    <link rel="stylesheet" href="styles/refer-friends.css">
+</head>
+<body>
+
+<header>
+    <h1>Refer & Earn</h1>
+</header>
+
+<main>
+    <div class="referral-container">
+        <h2>Your GP ID:</h2>
+        <div class="referral-box">
+            <span id="gp-id">Loading...</span>
+            <button id="copy-btn">Copy</button>
+        </div>
+
+        <p>Invite your friends and earn GP!</p>
+        <ul>
+            <li>1 GP/hour when they sign up.</li>
+            <li>+2 GP/hour if they upgrade their subscription.</li>
+            <li>Max 5 referrals = Earn up to 15 GP/hour!</li>
+        </ul>
+
+        <h3>Referred Friends</h3>
+        <div id="referral-summary">
+            <p><strong>Total Bonus:</strong> <span id="total-bonus">0</span> GP/hour</p>
+        </div>
+        <div id="referral-list">
+             <p>Loading referrals...</p>
+        </div>
+    </div>
+</main>
+
+<script src="scripts/refer-friends.js"></script>
+
+</body>
+</html>
