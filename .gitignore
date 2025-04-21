@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+.env
+.DS_Store
+logs
+*.log
+npm-debug.log*
+
+# OS generated
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Netlify build
+dist/
+build/
+
+# Others
+*.zip
+*.tar.gz
