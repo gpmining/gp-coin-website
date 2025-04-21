@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://gp-coin-website.onrender.com/api";
 document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup");
     const popupMessage = document.getElementById("popup-message");

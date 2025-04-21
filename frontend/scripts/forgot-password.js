@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000/api/forgot-password";
+const API_BASE_URL = "https://gp-coin-website.onrender.com/api/forgot-password";
 
 document.addEventListener("DOMContentLoaded", () => {
   const emailForm = document.getElementById("forgot-password-form");

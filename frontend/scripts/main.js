@@ -1,5 +1,5 @@
 // scripts/main.js
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://gp-coin-website.onrender.com/api";
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 

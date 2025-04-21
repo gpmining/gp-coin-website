@@ -1,5 +1,5 @@
-const API_BASE_URL = "http://localhost:3000/api";
-const API_BASE_URL = "http://localhost:3000/api"; // Change this if backend is running on a different port
+const API_BASE_URL = "https://gp-coin-website.onrender.com/api";
+const API_BASE_URL = "https://gp-coin-website.onrender.com/api"; // Change this if backend is running on a different port
 
 async function loginUser(email, password) {
     try {
