@@ -21,3 +21,4 @@ build/
 # Others
 *.zip
 *.tar.gz
+backend/scripts/createAdmin.js
