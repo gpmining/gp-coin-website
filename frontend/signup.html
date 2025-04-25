@@ -32,6 +32,40 @@
         <h2>Create Your Account</h2>
         <form id="signup-form">
           <div class="form-group">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GP Coin - Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/signup.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="hamburger" id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="logo">
+        <img src="assets/images/gp-coin.png" alt="GP Coin Logo" />
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Log In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="signup-section">
+      <div class="signup-card">
+        <h2>Create Your Account</h2>
+        <form id="signup-form">
+          <div class="form-group">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required />
           </div>
@@ -69,13 +103,20 @@
             </div>
           </div>
 
-          <div class="form-group password-group">
-            <label for="confirm-password">Confirm Password:</label>
-            <div class="password-wrapper">
-              <input type="password" id="confirm-password" required />
-              <button type="button" class="toggle-btn" onclick="togglePassword('confirm-password', this)">Show</button>
-            </div>
-          </div>
+        <!-- Confirm Password -->
+<div class="form-group password-group">
+  <label for="confirm-password">Confirm Password:</label>
+  <div class="password-wrapper">
+    <input type="password" id="confirm-password" required />
+    <button type="button" class="toggle-btn" onclick="togglePassword('confirm-password', this)">Show</button>
+  </div>
+</div>
+
+<!-- reCAPTCHA (move outside the input wrapper) -->
+<div class="form-group" style="margin-top: 1rem;">
+  <div class="g-recaptcha" data-sitekey="6LcPOyQrAAAAAOhptkI22zoOEoE1n4hxmWOpAX_1"></div>
+</div>
+
           <button type="submit" class="signup-btn">
   <span class="spinner"></span>
   <span class="btn-text">Register</span>
@@ -88,6 +129,11 @@
 
   <footer>
     <p>&copy; 2025 GP Coin. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/signup.js"></script>
+</body>
+</html>d.</p>
   </footer>
 
   <script src="scripts/signup.js"></script>
