@@ -214,3 +214,18 @@ document.getElementById("close-password-modal").addEventListener("click", closeP
   // Load user mining data on page load
   await fetchUserData();
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const text = "GP Balance and Exchange rate will update after countdown time End.";
+    let index = 0;
+    const speed = 80; // Adjust typing speed (lower is faster)
+
+    function typeWriterEffect() {
+        if (index < text.length) {
+            document.getElementById("typewriter").textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriterEffect, speed);
+        }
+    }
+
+    typeWriterEffect();
+});

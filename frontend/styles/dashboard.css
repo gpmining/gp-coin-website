@@ -39,7 +39,7 @@ body.silver {
 }
 
 body.gold {
-  background: linear-gradient(-45deg, #E6B656, #E8B74D, #A96031, #DFAA46);
+  background: linear-gradient(-45deg, #DCA848, #E8B74D, #A96031, #DFAA46);
   background-size: 300% 300%;
   animation: gradientAnimation 5s ease infinite;
 }
@@ -87,7 +87,7 @@ header {
 .hamburger .line {
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: #C77500;
   transition: all 0.3s ease;
 }
 
@@ -126,7 +126,7 @@ header {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #C77500;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;

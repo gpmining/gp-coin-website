@@ -12,23 +12,16 @@ hamburger.addEventListener("click", () => {
 // Toggle Password Visibility
 function togglePassword(inputId) {
   const input = document.getElementById(inputId);
-  const toggleIcon = document.getElementById(`toggle-${inputId}`);
+  const toggleBtn = input.nextElementSibling;
 
   if (input.type === "password") {
     input.type = "text";
-    toggleIcon.src = "assets/icons/unhide.png"; // Show unhide icon
+    toggleBtn.textContent = "Hide";
   } else {
     input.type = "password";
-    toggleIcon.src = "assets/icons/hide.png"; // Show hide icon
+    toggleBtn.textContent = "Show";
   }
-
-  // Add animation
-  toggleIcon.style.transform = "translateY(-50%) scale(1.2)";
-  setTimeout(() => {
-    toggleIcon.style.transform = "translateY(-50%) scale(1)";
-  }, 200);
 }
-
 // CNIC Formatting
 document.getElementById("cnic").addEventListener("input", function (e) {
   let digits = e.target.value.replace(/\D/g, "").substring(0, 13);

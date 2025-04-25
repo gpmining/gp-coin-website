@@ -7,11 +7,9 @@ body {
   display: flex;
   flex-direction: column;
   background-size: 300%;
-  background: linear-gradient(-45deg, #A8C7EC, #475461, #7AA1C7, #608AB3);
+  background: linear-gradient(-45deg, #B225BA, #DCA848, #DCA848, #DCA848);
   background-size: 300% 300%;
-  animation: gradientBlur 5s ease infinite;
-  
-  backdrop-filter: blur(15px); /* Adds blur effect */
+  animation: gradientAnimation 5s ease infinite;
 }
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
@@ -78,7 +76,7 @@ nav {
   height: 40px; /* Keep it proportional */
   border-radius: 50%; /* Make it circular */
   object-fit: cover; /* Ensure proper image fit */
-  border: 1px solid white;
+  border: 1px solid #C77500;
 }
 
 /* Hamburger Menu */
@@ -93,7 +91,7 @@ nav {
 .hamburger .line {
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: #C77500;
   transition: all 0.3s ease;
 }
 
@@ -119,7 +117,7 @@ nav {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #C77500;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;

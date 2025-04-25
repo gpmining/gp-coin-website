@@ -1,5 +1,13 @@
 const API_BASE_URL = "https://gp-coin-website.onrender.com/api";
 
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   const rankPrices = {
     free: 0,
