@@ -72,7 +72,7 @@ header {
   position: absolute;
   top: 5px;
   left: 50%;
-  height: 80px;
+  width: 60px;
   transform: translateX(-50%);
 }
 
