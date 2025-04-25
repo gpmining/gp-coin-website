@@ -29,4 +29,6 @@ app.use("/api/forgot-password", require("./routes/forgotPasswordRoutes"));
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
-
+app.get('/', (req, res) => {
+  res.status(200).send('Backend is alive!');
+});
