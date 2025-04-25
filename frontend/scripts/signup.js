@@ -22,6 +22,7 @@ function togglePassword(inputId) {
     toggleBtn.textContent = "Show";
   }
 }
+
 // CNIC Formatting
 document.getElementById("cnic").addEventListener("input", function (e) {
   let digits = e.target.value.replace(/\D/g, "").substring(0, 13);
@@ -36,10 +37,11 @@ document.getElementById("mobile").addEventListener("input", function (e) {
   e.target.value = formatted;
 });
 
-// Form Submission & Signup API Call
+// Form Submission
 document.getElementById("signup-form").addEventListener("submit", async function (e) {
   e.preventDefault();
 
+  const btn = document.querySelector(".signup-btn");
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirm-password").value;
 
@@ -48,7 +50,6 @@ document.getElementById("signup-form").addEventListener("submit", async function
     return;
   }
 
-  // Collecting form data
   const formData = {
     name: document.getElementById("name").value,
     cnic: document.getElementById("cnic").value,
@@ -58,6 +59,9 @@ document.getElementById("signup-form").addEventListener("submit", async function
     referralGPID: document.getElementById("referral-gp-id").value || "None",
     password: password,
   };
+
+  // Show loading spinner
+  btn.classList.add("loading");
 
   try {
     const response = await fetch(`${API_BASE_URL}/auth/signup`, {
@@ -77,5 +81,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
   } catch (error) {
     console.error("Signup failed:", error);
     alert("An error occurred. Please try again.");
+  } finally {
+    btn.classList.remove("loading");
   }
 });
