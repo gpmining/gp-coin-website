@@ -222,7 +222,7 @@ nav {
 }
 
 /* Submit Button */
-.btn {
+.login-btn {
   width: 100%;
   padding: 0.75rem;
   background-color: #007bff;
@@ -233,10 +233,39 @@ nav {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn:hover {
+.login-btn:hover {
   background-color: #0056b3;
+}
+
+.login-btn .spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  display: none; /* Hidden initially */
+}
+
+.login-btn.loading .spinner {
+  display: inline-block;
+}
+
+.login-btn.loading .btn-text {
+  opacity: 0.6;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .login-section p {

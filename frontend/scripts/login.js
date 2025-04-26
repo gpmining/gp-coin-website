@@ -26,6 +26,7 @@ function togglePassword(inputId) {
 document.getElementById("login-form").addEventListener("submit", async function (e) {
   e.preventDefault();
 
+  const btn = document.querySelector(".login-btn");
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
@@ -33,6 +34,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
     alert("Please fill in all fields.");
     return;
   }
+  btn.classList.add("loading");
 
   try {
     const response = await fetch(`${API_BASE_URL}/auth/login`, {
@@ -54,5 +56,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
   } catch (error) {
     console.error("Login failed:", error);
     alert("An error occurred. Please try again.");
+  } finally {
+    btn.classList.remove("loading");
   }
 });
