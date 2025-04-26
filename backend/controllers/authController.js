@@ -1,13 +1,33 @@
 // controllers/authController.js
+const axios = require("axios");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const generateUniqueGpId = require("../utils/generateGpId");
+require("dotenv").config(); // ⬅️ Make sure this is added at the top (only once globally if not already)
 
 const signup = async (req, res) => {
   try {
-    const { name, email, password, mobile, cnic, dob, referralGPID } = req.body;
+    const { name, email, password, mobile, cnic, dob, referralGPID, recaptchaToken } = req.body;
 
+    if (!recaptchaToken) {
+      return res.status(400).json({ message: "reCAPTCHA token missing" });
+    }
+    
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    
+    const recaptchaRes = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null, {
+      params: {
+        secret: secretKey,
+        response: recaptchaToken
+      }
+    });
+
+    if (!recaptchaRes.data.success) {
+      return res.status(400).json({ message: "reCAPTCHA verification failed" });
+    }
+
+    // ✅ Continue signup
     const hashedPassword = await bcrypt.hash(password, 10);
     const gp_id = await generateUniqueGpId();
 

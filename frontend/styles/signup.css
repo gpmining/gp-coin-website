@@ -1,7 +1,6 @@
 /* General Styles */
-/* Ensure the content doesn't get hidden behind the footer */
 main {
-  padding-bottom: 3rem; /* Adjust according to footer height */
+  padding-bottom: 3rem;
 }
 
 body {
@@ -15,7 +14,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #fff;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -32,7 +31,6 @@ nav {
   align-items: center;
 }
 
-/* Centered Logo */
 .logo {
   position: absolute;
   left: 50%;
@@ -43,7 +41,6 @@ nav {
   height: 80px;
 }
 
-/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -59,20 +56,16 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Transform hamburger into "X" when active */
 .hamburger.active .line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.active .line:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active .line:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Navigation Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -97,12 +90,11 @@ nav {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Styles */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
-
   .nav-links {
     display: none;
     flex-direction: column;
@@ -113,27 +105,25 @@ nav {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 1rem 0;
   }
-
   .nav-links.active {
     display: flex;
   }
 }
 
-/* Sign Up Section */
+/* Signup Section */
 .signup-section {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 2rem;
+  padding: 3rem 1rem;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .signup-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
 }
 
 .signup-section form {
@@ -141,47 +131,7 @@ nav {
   max-width: 500px;
 }
 
-/* Blur Card Behind Form */
-.signup-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 25px;
-    border-radius: 10px;
-    width: 90%;
-    margin-top: 5px;
-    max-width: 500px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Centering the Signup Form */
-.signup-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
-}
-
-/* Referral Input Field */
-#referral-gp-id {
-    width: 90%;
-    padding: 0.75rem;
-    border: 2px solid #C77500;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-#referral-gp-id::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-#referral-gp-id:focus {
-    border-color: #fff;
-    outline: none;
-}
-
+/* Form Fields */
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
@@ -194,7 +144,7 @@ nav {
 }
 
 .form-group input {
-  width: 90%;
+  width: 100%;
   padding: 0.75rem;
   border: 2px solid #C77500;
   border-radius: 5px;
@@ -239,23 +189,14 @@ nav {
   color: #ffffff;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+/* reCAPTCHA */
+.g-recaptcha {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-.signup-section p {
-  margin-top: 1rem;
-}
-
-.signup-section a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.signup-section a:hover {
-  text-decoration: underline;
-}
-/* Loading Spinner Styles */
+/* Submit Button + Spinner */
 .signup-btn {
   width: 100%;
   padding: 0.75rem;
@@ -273,6 +214,10 @@ nav {
   align-items: center;
 }
 
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
 .signup-btn .spinner {
   width: 18px;
   height: 18px;
@@ -281,7 +226,7 @@ nav {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin-right: 8px;
-  display: none; /* Hidden by default */
+  display: none; /* Hidden initially */
 }
 
 .signup-btn.loading .spinner {
@@ -307,4 +252,17 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.signup-section p {
+  margin-top: 1rem;
+}
+
+.signup-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-section a:hover {
+  text-decoration: underline;
 }

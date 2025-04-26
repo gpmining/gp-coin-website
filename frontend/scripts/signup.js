@@ -50,6 +50,12 @@ document.getElementById("signup-form").addEventListener("submit", async function
     return;
   }
 
+  const recaptchaToken = grecaptcha.getResponse();
+  if (!recaptchaToken) {
+    alert("Please complete the reCAPTCHA.");
+    return;
+  }
+
   const formData = {
     name: document.getElementById("name").value,
     cnic: document.getElementById("cnic").value,
@@ -58,6 +64,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
     email: document.getElementById("email").value,
     referralGPID: document.getElementById("referral-gp-id").value || "None",
     password: password,
+    recaptchaToken: recaptchaToken,
   };
 
   // Show loading spinner
